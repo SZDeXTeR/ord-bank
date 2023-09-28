@@ -1,0 +1,599 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: #131313;
+  }
+  
+  
+  .discord-login-button {
+    display: inline-block;
+    background-color: #7289da;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .discord-login-button:hover {
+    background-color: #677bc4;
+  }
+  
+  .discord-logo {
+    height: 20px;
+    width: 28px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  
+  .discord-button-text {
+    vertical-align: middle;
+  }
+  
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    background: rgb(0, 0, 0);
+  }
+
+  .txtLogo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70px;
+    color: white;
+  }
+
+  .imgLogo {
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  .toggle {
+    color: white;
+    font-size: 26px;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 900px) {
+    @keyframes rotateRight {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(180deg);
+      }
+    }
+
+    @keyframes rotateLeft {
+      from {
+        transform: rotate(180deg);
+      }
+
+      to {
+        transform: rotate(0deg);
+      }
+    }
+
+    .toggle .open {
+      display: block;
+      animation: rotateLeft .7s;
+    }
+
+    .active .open {
+      display: none;
+    }
+
+    .active .close {
+      display: block !important;
+      animation: rotateRight .7s;
+    }
+
+    .toggle .close {
+      display: none;
+    }
+
+    .txtLogo {
+      display: none;
+    }
+
+    .navigation {
+      width: 0px !important;
+      top: 50px !important;
+    }
+
+    .activeSideBar {
+        width: 70px !important;
+    }
+  }
+
+  .navigation {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    background: #000000;
+    transition: width .5s ease;
+    overflow-x: hidden;
+    display: flex;
+  }
+  
+  .navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 20px;
+    margin-left: 5px;
+  }
+  
+  .navigation ul li {
+    list-style: none;
+    position: relative;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    transition: .7s ease-in-out;
+  }
+  
+  .navigation ul .active {
+    background: rgb(182, 152, 18) !important;
+  }
+  
+  .navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .navigation ul li:hover {
+    background: hsla(0, 0%, 100%, .05);
+  }
+  
+  .navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+  }
+  
+  .navigation ul li a .icon i {
+    font-size: 1.5rem;
+  }
+  
+  .navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: normal;
+  }
+
+  @media screen and (min-width: 901px) {
+    .toggle {
+      display: none !important;
+    }
+
+    .shopSection {
+      margin-left: 200px
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card {
+    margin: 10px;
+    margin-top: 20px !important;
+    width: 375px;
+    overflow: hidden;
+    position: relative;
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+
+  .headerCard {
+    height: 228px;
+    background-color: #b09e44;
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .headerSummary {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    z-index: 3;
+  }
+
+  .sumText {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .sumBalance {
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.8rem;
+  }
+
+  .userProfile {
+    margin-top: 4rem;
+    height: 70px;
+    width: 70px;
+    align-self: flex-start;
+  }
+
+  .userPhoto {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 1px solid white;
+    box-shadow: 5px 5px 25px 0px rgba(0, 0, 0, 0.2);
+
+  }
+
+  @media screen and (max-width: 550px) {
+    .card {
+      width: 300px;
+      margin-left: 2px;
+    }
+
+    .headerCard {
+      height: 180px;
+    }
+  }
+
+  @media screen and (max-width: 447px) {
+    .headerCard {
+      display: flex;
+      height: 200px;
+      flex-direction: column-reverse;
+    }
+
+    .card {
+      width: 200px;
+    }
+
+    .userProfile {
+      margin: auto;
+    }
+
+    .headerSummary {
+      text-align: center;
+    }
+  }
+
+  .box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #b09e44;
+    border-radius: 3px;
+    padding: 70px 100px;
+    border-radius: 25px;
+  }
+
+  .transTitle {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 23px;
+    letter-spacing: 2px;
+    margin: -50px 0 80px 0;
+    display: block;
+    text-align: center;
+  }
+
+  .transInput {
+    position: relative;
+    margin-bottom: 25px;
+  }
+
+  .transInput input {
+    border: 0;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0 5px 0;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  .transInput label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .input-container input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #e74c3c;
+    }
+
+  .transInput input:focus~label,
+.transInput input:valid~label {
+top: -20px;
+font-size: 12px;
+
+}
+
+.productContainer {
+  position: relative;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  display: inline-table;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.productCard {
+  position: relative;
+  width: 320px;
+  height: 450px;
+  background: #232323;
+  border-radius: 20px;
+  overflow: hidden;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productImg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  width: 100%;
+  height: 220px;
+  transition: 0.5s;
+}
+
+.productImg img {
+  border-radius: 10px;
+}
+
+.productDetailsPS {
+  display: flex;
+  width: 100%;
+  margin-top: 0.5rem;
+  color: white;
+  transition: transform 0.5s ease;
+}
+
+.productName {
+  transition: transform 0.5s ease;
+}
+
+.productCard:hover .productName {
+  transform: translateY(-100px);
+}
+
+.productDetailsPS h3 {
+  margin: 0;
+}
+
+.productCard:hover .productDetailsPS {
+  transform: translateY(-100px);
+}
+
+.productDetailsPS h3:first-child {
+  margin-right: 5rem;
+}
+
+.productDetailsPS h3 {
+  margin: 0;
+}
+
+.productDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 50px;
+}
+
+.productCard:hover .productDetails {
+  bottom: 50px
+}
+
+.productName {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  margin: 0;
+  margin-top: 1rem;
+}
+
+.productName h2 {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  margin: 0;
+}
+
+.productCard:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(182, 152, 18);
+  clip-path: circle(150px at 80% 20%);
+  transition: 0.5s ease-in-out;
+}
+
+.productCard:hover:before {
+  clip-path: circle(300px at 80% -20%);
+}
+
+.productCard:after {
+  content: 'Ord';
+  position: absolute;
+  top: 30%;
+  left: -20%;
+  font-size: 12em;
+  font-weight: 800;
+  font-style: italic;
+  color: rgba(255,255,25,0.05);
+}
+
+.productCard:hover .productImg {
+  top: 0%;
+  transform: translateY(0%);
+}
+
+.productImg {
+  margin-top: 30px;
+  position: relative;
+  z-index: 10000;
+  width: 100%;
+  height: 220px;
+  transition: 0.5s;
+}
+
+.productImg img {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0);
+  width: 11rem;
+  position: inherit;
+  margin: -25px 0 0 0;
+}
+
+.shopSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+ .buyBtn {
+   background-color: rgb(182, 152, 18);
+   color: white;
+   padding: 10px 20px;
+   border-radius: 8px;
+   position: relative;
+   display: flex;
+   transition: .7s ease-in-out;
+   z-index: 1;
+  margin-top: 80px;
+   cursor: pointer;
+}
+
+.productCard:hover .buyBtn {
+  margin: 0;
+}
+
+.buyForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: -4rem;
+  transition: .7s ease-in-out;
+  
+}
+
+.productCard:hover .buyForm {
+  margin-bottom: 3rem;
+}
+
+/* 
+.productCard:hover .buyBtn {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 0.75s;
+  bottom: 0px;
+}
+
+ @media screen and (max-width: 400px) {
+  .productCard {
+    max-width: 15rem;
+    margin: 0px;/* The width is 100%, when the viewport is 800px or smaller 
+  }
+} */
+
+#account-info {
+    background-color: #b09e44;
+    padding: 40px;
+    margin: 40px 0;
+    border-radius: 5px;
+    text-align: center;
+  color: white;
+  justify-content: center;
+  }
+
+  /* Style for the copy button */
+  #copy-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  /* Style for the copy status message */
+  #copy-status {
+    margin-top: 10px;
+    font-style: italic;
+  }
+  
+  /* Style for the truncated account value */
+  .truncated-account {
+    display: inline-block;
+    max-width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+.acc {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
